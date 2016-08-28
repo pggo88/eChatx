@@ -29,7 +29,7 @@ function processUserInput(chatApp, socket) {
 
 
 // Client-side application initialization logic
-var socket = io.conntect();
+var socket = io.connect();
 
 $(document).ready(function() {
 	var chatApp = new Chat(socket);
