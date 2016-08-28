@@ -1,0 +1,10 @@
+{
+    "name": "e-chatx",
+    "version": "0.0.1",
+    "dependencies": {
+        "socket.io"	: "*",
+        "mime"		: "*"
+    },
+    "author": "Paul Gaston Gouron",
+    "description": "A simple node chat"
+}
