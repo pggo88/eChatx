@@ -29,13 +29,13 @@ function serveStatic(response, cache, absPath) {
 	if (cache[absPath]) {
 		sendFile(response, absPath, cache[absPath]);
 	} else {
-		fs.exist(absPath, function(exist) {
+		fs.exists(absPath, function(exist) {
 			if (exist) {
 				fs.readFile(absPath, function(err, data) {
 					if (err) {
 						send404(response);
 					} else {
-						cached[absPath] = data;
+						cache[absPath] = data;
 						sendFile(response, absPath, data);
 					}
 				});

@@ -19,3 +19,34 @@ Chat.prototype.changeRoom = function(room) {
     newRoom: room
   });
 };
+
+// Processing chat commands
+Chat.prototype.processCommand = function(command) {
+	var words = command.split(' ');
+	var command = words[0]
+					.substrings(1, words[0].length)
+					//parse command from first word
+					.toLowerCase();
+	var message = false;
+
+	switch(command) {
+		case 'join':
+			words.shift();
+			var room = words.join(' ');
+			// Handle roomchanging
+			this.changeRoom(room);
+			break;
+		case 'nick':
+			words.shift();
+			// handle name changing
+			var name = words.join(' ');
+			this.socket.emit('nameAttempt', name);
+			break;
+
+		default:
+			// return error message 
+			message = 'Unknown command.';
+			break;
+	}
+	return message;
+};
