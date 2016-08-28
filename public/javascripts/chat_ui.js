@@ -54,9 +54,15 @@ $(document).ready(function() {
 		$('#messages').append(newElement);
 	});
 	// Display list of available rooms
+	var rooms = []
+	for(var room in socket.rooms){
+    	if(room !== socket.id)
+    	    rooms.push(room);
+		}
+
 	socket.on('rooms', function(rooms) {
 		$('#room-list').empty();
-
+		
 		for (var room in rooms) {
 			room = room.substring(1, room.length);
 			if (room != '') {
