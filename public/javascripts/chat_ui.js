@@ -27,6 +27,8 @@ function processUserInput(chatApp, socket) {
 	$('#send-message').val('');
 }
 
+
+// Client-side application initialization logic
 var socket = io.conntect();
 
 $(document).ready(function() {
