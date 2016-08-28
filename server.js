@@ -67,3 +67,10 @@ var server = http.createServer(function(request,response) {
 server.listen(1337, function() {
   console.log("Magic happens on port 1337!");
 });
+
+// Loads functionality from a custom Node module that supplies 
+// Logic to handle Socket.IO-based server-side chat functionality.
+var chatServer = require('./lib/chat_server');
+
+// Starts the Socket.IO server functionality
+chatServer.listen(server);
