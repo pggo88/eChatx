@@ -23,3 +23,25 @@ function sendFile(response, filePath, fileContents) {
   );
   response.end(fileContents);
 }
+
+// Serve static files
+function serveStatic(response, cache, absPath) {
+	if (cache[absPath]) {
+		sendFile(response, absPath, cache[absPath]);
+	} else {
+		fs.exist(absPath, function(exist) {
+			if (exist) {
+				fs.readFile(absPath, function(err, data) {
+					if (err) {
+						send404(response);
+					} else {
+						cached[absPath] = data;
+						sendFile(response, absPath, data);
+					}
+				});
+			} else {
+				send404(response);
+			}
+		});
+	}
+}
