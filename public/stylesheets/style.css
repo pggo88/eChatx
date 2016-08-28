@@ -20,6 +20,7 @@ a {
 
 #messages {
 	padding:20px;
+	line-height: 16px;
 	width:80%;
 	height:300px;
 	overflow: auto;
@@ -54,7 +55,8 @@ a {
 }
 
 #help {
-  	font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
+	margin-top: 50px;
+  	font: 10px sans-serif;
 }
 
 .col.s12 > .btn {
