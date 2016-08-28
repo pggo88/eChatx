@@ -7,7 +7,7 @@ var path	= require('path');
 // mime module MIMe typebased on file extention
 var mime	= require('mime');
 // where content of cached file is stored
-var cache 	= ();
+var cache 	= {};
 
 // Sending File Data and Error Responses
 function send404(response) {
@@ -61,4 +61,9 @@ var server = http.createServer(function(request,response) {
 	// Serve file
 	var absPath = './' + filePath;
 	serveStatic(response, cache, absPath)
+});
+
+// request server to listen to TCP/IP port 1337 when starts.
+server.listen(1337, function() {
+  console.log("Magic happens on port 1337!");
 });
