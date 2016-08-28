@@ -45,3 +45,20 @@ function serveStatic(response, cache, absPath) {
 		});
 	}
 }
+
+
+// Create http server, using anonymous function to define per-request behavior
+var server = http.createServer(function(request,response) {
+	var filePath = false;
+
+	// Determine HTML file to be served by 'default'
+	if (request.url =='/') {
+		filePath = 'public/index.html';
+	} else {
+		// URL to relative file path
+		filePath = 'public' + request.url;
+	}
+	// Serve file
+	var absPath = './' + filePath;
+	serveStatic(response, cache, absPath)
+});
