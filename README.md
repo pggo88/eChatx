@@ -1,5 +1,5 @@
 # eChatx
-A simple node chat under construction
+A simple node chat using socket.io
 
 ## Installation
 ```
