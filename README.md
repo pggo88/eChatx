@@ -1,10 +1,10 @@
-## e-Chatx
+# e-Chatx
 A simple node chat under construction
 
-# To start server: 
+## To start server: 
 node server.js
 
-# e-ChatX
+## e-ChatX
 A simple node chat.
 
 ## Installation
