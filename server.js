@@ -46,7 +46,6 @@ function serveStatic(response, cache, absPath) {
 	}
 }
 
-
 // Create http server, using anonymous function to define per-request behavior
 var server = http.createServer(function(request,response) {
 	var filePath = false;
