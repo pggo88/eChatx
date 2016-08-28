@@ -1,2 +1,2 @@
 # e-Chatx
-A simple node chat
+A simple node chat under construction
