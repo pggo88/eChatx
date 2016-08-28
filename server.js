@@ -64,8 +64,8 @@ var server = http.createServer(function(request,response) {
 });
 
 // request server to listen to TCP/IP port 1337 when starts.
-server.listen(1337, function() {
-  console.log("Magic happens on port 1337!");
+server.listen(8000, function() {
+  console.log("Magic happens on port 8000!");
 });
 
 // Loads functionality from a custom Node module that supplies 

@@ -56,6 +56,7 @@ $(document).ready(function() {
 	// Display list of available rooms
 	socket.on('rooms', function(rooms) {
 		$('#room-list').empty();
+
 		for (var room in rooms) {
 			room = room.substring(1, room.length);
 			if (room != '') {
